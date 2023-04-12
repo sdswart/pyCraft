@@ -1,3 +1,5 @@
-# Package dependencies are stored in setup.py.
-# For more information, see <https://github.com/ammaraskar/pyCraft/pull/156>.
--e .
+cryptography>=1.5
+requests
+pynbt
+fastapi
+uvicorn

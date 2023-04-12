@@ -20,7 +20,7 @@ def get_options():
     parser.add_option("-p", "--password", dest="password", default=None,
                       help="password to log in with")
 
-    parser.add_option("-s", "--server", dest="server", default=None,
+    parser.add_option("-s", "--server", dest="server", default='2b2t.org',
                       help="server host or host:port "
                            "(enclose IPv6 addresses in square brackets)")
 
@@ -69,6 +69,7 @@ def main():
             options.address, options.port, username=options.username)
     else:
         auth_token = authentication.AuthenticationToken()
+        print(f"Connecting as {options.username} [{options.password}]...")
         try:
             auth_token.authenticate(options.username, options.password)
         except YggdrasilError as e:
